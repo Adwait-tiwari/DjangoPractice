@@ -1,3 +1,80 @@
 {% extends "index.html" %} {% block title %}Contact Details of Adwait
-TIwari{%endblock title %} {% block body%}This is the Page where You Get
-theDetails of Contacting Adwait TIwari{% endblock body %}
+TIwari{%endblock title %} {% block body%}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4 text-primary fw-bold">Contact Us</h3>
+
+          <!-- Contact Form -->
+          <form method="post" action="/contact">
+            {% csrf_token %}
+            <!-- Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label fw-semibold">Full Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-3">
+              <label for="subject" class="form-label fw-semibold"
+                >Subject</label
+              >
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="subject"
+                placeholder="Enter subject"
+                required
+              />
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold"
+                >Message</label
+              >
+              <textarea
+                class="form-control form-control-lg"
+                id="message"
+                rows="4"
+                placeholder="Write your message"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                Send Message
+              </button>
+            </div>
+          </form>
+          <!-- End Contact Form -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

@@ -1,2 +1,30 @@
 {% extends "index.html" %} {% block title %}About Adwait{% endblock title %}
-{%block body %}This is the About Adwait tiwari Page{% endblock body %}
+{%block body %}
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Our Features</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 p-3">
+          <h4 class="fw-bold">Feature 1</h4>
+          <p>Short description about the first amazing feature of your site.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card shadow-sm border-0 p-3">
+          <h4 class="fw-bold">Feature 2</h4>
+          <p>
+            Short description about the second amazing feature of your site.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card shadow-sm border-0 p-3">
+          <h4 class="fw-bold">Feature 3</h4>
+          <p>Short description about the third amazing feature of your site.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}
