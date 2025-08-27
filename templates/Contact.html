@@ -10,6 +10,7 @@ TIwari{%endblock title %} {% block body%}
           <!-- Contact Form -->
           <form method="post" action="/contact">
             {% csrf_token %}
+
             <!-- Name -->
             <div class="mb-3">
               <label for="name" class="form-label fw-semibold">Full Name</label>
@@ -17,6 +18,7 @@ TIwari{%endblock title %} {% block body%}
                 type="text"
                 class="form-control form-control-lg"
                 id="name"
+                name="name"
                 placeholder="Enter your name"
                 required
               />
@@ -31,6 +33,7 @@ TIwari{%endblock title %} {% block body%}
                 type="email"
                 class="form-control form-control-lg"
                 id="email"
+                name="email"
                 placeholder="Enter your email"
                 required
               />
@@ -45,6 +48,7 @@ TIwari{%endblock title %} {% block body%}
                 type="text"
                 class="form-control form-control-lg"
                 id="subject"
+                name="subject"
                 placeholder="Enter subject"
                 required
               />
@@ -52,12 +56,11 @@ TIwari{%endblock title %} {% block body%}
 
             <!-- Message -->
             <div class="mb-3">
-              <label for="message" class="form-label fw-semibold"
-                >Message</label
-              >
+              <label for="desc" class="form-label fw-semibold">Message</label>
               <textarea
                 class="form-control form-control-lg"
-                id="message"
+                id="desc"
+                name="desc"
                 rows="4"
                 placeholder="Write your message"
                 required
@@ -77,4 +80,5 @@ TIwari{%endblock title %} {% block body%}
     </div>
   </div>
 </div>
+
 {% endblock body %}
