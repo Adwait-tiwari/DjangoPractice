@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from Practice.models import Contact
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
@@ -44,4 +45,24 @@ def LoginUser(request):
 
 def LogoutUser(request):
     logout(request)
-    return render(request,'Logout.html')
+    return render(request, 'login.html')
+
+def SignupUser(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        confirm = request.POST.get('confirm_password')
+
+        if password != confirm : 
+            return redirect('signup')
+        
+        if User.objects.filter(username=username).exists():
+            return redirect('signup')
+        
+        user =User.objects.create_user(username=username,password=password)
+        user.save()
+        return redirect('login')
+    return render(request,'Signup.html')
+
+def home_api(request):
+    return JsonResponse({"message" : "Hello from Django to React"})
